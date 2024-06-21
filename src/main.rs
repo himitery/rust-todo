@@ -1,10 +1,13 @@
-use axum::body::Body;
-use axum::http::Request;
-use axum::Router;
+use axum::{
+    body::Body,
+    http::Request, Router,
+};
 use dotenv::dotenv;
 use tokio;
-use tower_http::cors::CorsLayer;
-use tower_http::trace::TraceLayer;
+use tower_http::{
+    cors::CorsLayer,
+    trace::TraceLayer,
+};
 use tracing::{debug_span, Level};
 use tracing_subscriber;
 

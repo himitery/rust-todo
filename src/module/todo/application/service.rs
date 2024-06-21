@@ -9,13 +9,13 @@ pub mod todo_service {
             persistence::repository::todo_repository,
             rest::{
                 req::create_todo_req::CreateTodoReq,
+                req::update_todo_req::UpdateTodoReq,
+                res::todo_delete_res::TodoDeleteRes,
                 res::todo_res::TodoRes,
                 router::AppState,
             },
         },
     };
-    use crate::module::todo::infra::rest::req::update_todo_req::UpdateTodoReq;
-    use crate::module::todo::infra::rest::res::todo_delete_res::TodoDeleteRes;
 
     pub async fn list(State(state): State<AppState>) -> (StatusCode, Json<Vec<TodoRes>>) {
         let todos = todo_repository::find_all(&state.conn).await;
