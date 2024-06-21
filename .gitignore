@@ -1,0 +1,15 @@
+# JetBrains
+.idea
+
+# Rust
+target
+
+# Migration
+migration/target
+
+# Dcoker
+.data
+
+# Env
+.env*
+!.env.template
